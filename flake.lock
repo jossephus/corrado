@@ -219,15 +219,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1712696531,
-        "narHash": "sha256-oXvz2oPS2HBq7a/KMLk0ZGeeid/dq0DcvlJJYktGwxg=",
-        "owner": "nix-community",
+        "lastModified": 1712741888,
+        "narHash": "sha256-G4HDgs27bwy6/snFHIhU4OZKWdFBHFuxDyCkYj2L9bw=",
+        "owner": "jossephus",
         "repo": "nixvim",
-        "rev": "c86a0aca63ce91c482b1b86242e0959ceb882667",
+        "rev": "ffa3020522e210fcae934f10440c24ea1d46f6ea",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "jossephus",
+        "ref": "add-component-to-neotree",
         "repo": "nixvim",
         "type": "github"
       }
