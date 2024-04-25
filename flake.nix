@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     nixvim = {
-        url = "github:jossephus/nixvim?ref=add-component-to-neotree";
+        url = "https://github.com/nix-community/nixvim";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };

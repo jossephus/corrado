@@ -19,6 +19,25 @@
       };
     };
 
+    floaterm = {
+      enable = true;
+
+      width = 0.8;
+
+      height = 0.8;
+
+      keymaps = {
+        toggle = "<Leader><Leader>";
+      };
+    };
+
+    toggleterm = {
+      enable = true;
+      settings = {
+        open_mapping = "[[<c-\>]]";
+      };
+    };
+
     neo-tree = {
       enable = true;
 
@@ -39,7 +58,7 @@
 
       window = {
 				width = 50;
-				position = "left";
+				position = "right";
 
         mappings = {
           d = "add_directory";
@@ -65,16 +84,16 @@
           };
         };
 
-        components = {
-          name = ''
-            function(config, node, state)
-              local result = fc.name(config, node, state)
-              if node:get_depth() == 1 and node.type ~= "message" then
-                result.text = vim.fn.fnamemodify(node.path, ":t")
-              end
-            return result
-          '';
-        };
+        #components = {
+          #name = ''
+            #function(config, node, state)
+              #local result = fc.name(config, node, state)
+              #if node:get_depth() == 1 and node.type ~= "message" then
+                #result.text = vim.fn.fnamemodify(node.path, ":t")
+              #end
+            #return result
+          #'';
+        #};
       };
     };
   };
