@@ -5,10 +5,10 @@
     tabstop = 2;
     softtabstop = 2;
 
-    smartindent = true; 
+    smartindent = true;
     wrap = true;
 
-    number = true; 
+    number = true;
 
     wildmode = "longest:full,full";
 
