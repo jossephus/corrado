@@ -30,5 +30,33 @@
         silent = true;
       };
     }
+    {
+      action = "<cmd>:Bdelete<cr>";
+      key = "][";
+      options = {
+        silent = true; 
+      };
+    }
+    {
+      action = "<cmd>TroubleToggle quickfix<cr>";
+      key = "<Leader>xq"; 
+      options = {
+        silent = true; 
+      };
+    }
+    {
+      action = "<cmd>TroubleToggle document_diagnostics<cr>";
+      key = "<Leader>q"; 
+      options = {
+        silent = true; 
+      };
+    }
+    {
+      action = ":Bdelete<cr>";
+      key = "]["; 
+      options = {
+        silent = true; 
+      };
+    }
   ];
 }
