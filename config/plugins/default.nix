@@ -1,4 +1,4 @@
-{
+{ pkgs, volar-package, ... }: {
   imports = [
     ./colorschemes.nix
     ./core.nix
@@ -6,7 +6,7 @@
     ./file-explorer.nix
     ./formatter.nix
     ./languages-specific.nix
-    ./lsp.nix
+    (import ./lsp.nix { inherit pkgs volar-package; })
     ./telescope.nix
     ./terminals.nix
     ./ui.nix

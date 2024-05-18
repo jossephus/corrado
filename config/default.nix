@@ -1,10 +1,23 @@
-{pkgs, ...}: {
+{pkgs, volar-package, ...}: {
   # Import all your configuration modules here
   imports = [
     ./options.nix
     ./keymaps.nix
-    ./plugins
+    (import ./plugins { inherit pkgs volar-package; }) 
   ];
+
+  #pac
+
+  #package = pkgs.neovim-unwrapped.overrideAttrs (final: prev: rec {
+    #version = "0.10";
+
+    #src = pkgs.fetchFromGitHub {
+      #owner = "neovim";
+      #repo = "neovim";
+      #rev = "v${version}";
+      #hash = "sha256-CcaBqA0yFCffNPmXOJTo8c9v1jrEBiqAl8CG5Dj5YxE=";
+    #};
+  #});
 
   #colorschemes.catppuccin.enable = true;
 }

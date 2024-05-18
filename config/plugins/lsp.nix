@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, volar-package, ...}: {
+  extraConfigLua = ''
+    vim.lsp.inlay_hint.enable(true);
+  '';
   plugins = {
     lspkind = {
       enable = true;
@@ -14,31 +17,42 @@
     lsp = {
       enable = true;
       servers = {
+        rust-analyzer = {
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
+
         tsserver = {
           enable = true;
-          filetypes = [
-            "typescript"
-            "javascript"
-            "javascriptreact"
-            "typescriptreact"
-            "vue"
-          ];
+          filetypes = [ "typescript" "javascript" "javascriptreact" "typescriptreact" ];
+          extraOptions = {
+            init_options = {
+              plugins = [
+                 {
+                   name = "@vue/typescript-plugin";
+                   location = "${volar-package}/bin/vue-language-server";
+                   languages = [ "vue" ];
+                 }
+              ];
+            };
+          };
         };
         volar = {
           enable = true;
-          filetypes = [
-            "typescript"
-            "javascript"
-            "javascriptreact"
-            "typescriptreact"
-            "vue"
-          ];
+          #filetypes = [ "typescript" "javascript" "javascriptreact" "typescriptreact" "vue" ];
+          package = volar-package;
           #extraOptions = {
-          #typescript = {
-          #preferences = {
-          #importModuleSpecifiers = "non-relative";
-          #};
-          #};
+            #init_options = {
+              #vue = {
+                #hybridMode = false;
+              #};
+            #};
+            #typescript = {
+              #preferences = {
+                #importModuleSpecifiers = "non-relative";
+              #};
+            #};
           #};
         };
 
