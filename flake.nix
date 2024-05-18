@@ -2,8 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    #nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:Nixos/nixpkgs/4a6b83b05df1a8bd7d99095ec4b4d271f2956b64";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
     nixvim = {
