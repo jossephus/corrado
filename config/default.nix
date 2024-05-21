@@ -1,9 +1,9 @@
-{pkgs, volar-package, ...}: {
+{pkgs, volar-package, vuels, vuets, ...}: {
   # Import all your configuration modules here
   imports = [
     ./options.nix
     ./keymaps.nix
-    (import ./plugins { inherit pkgs volar-package; }) 
+    (import ./plugins { inherit pkgs volar-package vuels vuets; }) 
   ];
 
   #pac

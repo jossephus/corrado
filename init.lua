@@ -130,13 +130,21 @@ require("conform").setup({
 -- LSP {{{
 do
 	local __lspServers = {
+		{ ["name"] = "volar" },
 		{
 			["extraOptions"] = {
 				["filetypes"] = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-				["initOptions"] = { ["vue"] = { ["hybridMode"] = false } },
-				["typescript"] = { ["preferences"] = { ["importModuleSpecifiers"] = "non-relative" } },
+				["init_options"] = {
+					["plugins"] = {
+						{
+							["languages"] = { "vue" },
+							["location"] = "/nix/store/4f6ac0fyf329waibf7aq44a6gmzc3hii--vue-typescript-plugin/lib/node_modules/@vue/typescript-plugin/",
+							["name"] = "@vue/typescript-plugin",
+						},
+					},
+				},
 			},
-			["name"] = "volar",
+			["name"] = "tsserver",
 		},
 		{
 			["extraOptions"] = {
@@ -155,6 +163,8 @@ do
 			},
 			["name"] = "tailwindcss",
 		},
+		{ ["name"] = "rust_analyzer" },
+		{ ["name"] = "nil_ls" },
 	}
 	local __lspOnAttach = function(client, bufnr) end
 	local __lspCapabilities = function()
@@ -434,6 +444,8 @@ end)
 vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>vrr", builtin.lsp_references, {})
 
+vim.lsp.inlay_hint.enable(true)
+
 require("neodev").setup()
 
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
@@ -565,6 +577,9 @@ vim.keymap.set({ "n", "t" }, "<A-UP>", require("smart-splits").resize_up)
 vim.keymap.set({ "n", "t" }, "<A-l>", require("smart-splits").resize_right)
 
 vim.cmd([[ colorscheme horizon ]])
+vim.cmd([[
+  hi LspInlayHint guifg=#d8d8d8 guibg=#3E3D53
+]])
 
 -- Set up keybinds {{{
 do
@@ -605,6 +620,8 @@ do
 	end
 end
 -- }}}
+
+vim.filetype.add({ ["extension"] = { ["v"] = "vlang" } })
 
 vim.keymap.set("n", "[[", ":bprev<cr>", { noremap = true })
 vim.keymap.set("n", "{", ":bprev<cr>", { noremap = true })
