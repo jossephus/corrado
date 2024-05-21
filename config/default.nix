@@ -1,12 +1,10 @@
-{pkgs, volar-package, vuels, vuets, ...}: {
+{pkgs, ...}: {
   # Import all your configuration modules here
   imports = [
     ./options.nix
     ./keymaps.nix
-    (import ./plugins { inherit pkgs volar-package vuels vuets; }) 
+    (import ./plugins { inherit pkgs; }) 
   ];
-
-  #pac
 
   #package = pkgs.neovim-unwrapped.overrideAttrs (final: prev: rec {
     #version = "0.10";
