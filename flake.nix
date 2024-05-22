@@ -6,9 +6,8 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     nixvim = {
-      #url = "github:nix-community/nixvim";
-      url = "flake:localnixvim";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

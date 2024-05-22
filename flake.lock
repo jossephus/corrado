@@ -221,22 +221,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1715961556,
-        "narHash": "sha256-+NpbZRCRisUHKQJZF3CT+xn14ZZQO+KjxIIanH3Pvn4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4a6b83b05df1a8bd7d99095ec4b4d271f2956b64",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "devshell": "devshell",
@@ -245,22 +229,24 @@
         "flake-root": "flake-root",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "pre-commit-hooks": "pre-commit-hooks",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1716125991,
-        "narHash": "sha256-PmB9vmp383foiVi64RawbnkC+6SiYiWUjdzw2xgl3eM=",
-        "ref": "refs/heads/main",
-        "rev": "88ade1dfaa017499326103a078c66dd5d4d0606e",
-        "revCount": 1423,
-        "type": "git",
-        "url": "file:///home/aldrich/temp/nixvim"
+        "lastModified": 1716326274,
+        "narHash": "sha256-1LyTvpjb8Cmlg3TRnP56rvqK1WSNa518pD6F0tjgM+U=",
+        "owner": "nix-community",
+        "repo": "nixvim",
+        "rev": "5d2e01495944dcf7cf7ee53a7074c4010165d756",
+        "type": "github"
       },
       "original": {
-        "id": "localnixvim",
-        "type": "indirect"
+        "owner": "nix-community",
+        "repo": "nixvim",
+        "type": "github"
       }
     },
     "pre-commit-hooks": {
