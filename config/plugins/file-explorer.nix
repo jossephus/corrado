@@ -117,7 +117,7 @@
     		},
     	},
     	filesystem = {
-    		follow_current_file = { enable = true }, -- focus the currently opened file in tree
+    		follow_current_file = true, -- focus the currently opened file in tree
     		components = {
     			name = function(config, node, state)
     				local result = fc.name(config, node, state)
