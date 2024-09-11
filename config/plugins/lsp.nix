@@ -2,34 +2,60 @@
 
 let 
   vuets = pkgs.buildNpmPackage rec {
-    name = "@vue/typescript-plugin";
-    version = "2.0.19";
-    src = pkgs.fetchurl {
-        url = "https://registry.npmjs.org/@vue/typescript-plugin/-/typescript-plugin-${version}.tgz";
-        hash = "sha256-mWs8JPxWdQtaW30yVKRJsv70bZicz1HBVRwa5QSWcTE=";
+    name = "@vtsls/language-server";
+    version = "2.1.6";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "vuejs";
+      repo = "language-tools";
+      rev = "814b30f9fa5157b9549792af30a9e224d31c7a8f";
+      hash = "sha256-cic4s34GcxpADM3HcCUv6m8H+i0h2q3cNhtwxfcJ04w=";
     };
-    npmDepsHash = "sha256-OEMnImWpwNbAElpHRtW4kDn8WTfR027IUX1BVKhI+40=";
-    dontNpmBuild = true;
+
+    sourceRoot = "source/packages/typescript-plugin";
+
+        #npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
+    npmDepsHash = "sha256-uHX2UoNrXCvhMVFblS7Gk3+jhzp019sCw7NyO+ssOZU=";
+
     postPatch = ''
       cp ${../../others/vue/typescript-plugin/package-lock.json} package-lock.json
     '';
+
+    dontNpmBuild = true;
+
+    npmFlags = [ "--legacy-peer-deps" "--loglevel=verbose" ];
+
+    meta = {
+      mainProgram = "vtsls";
+    };
   };
 
   vuels = pkgs.buildNpmPackage rec {
-      name = "@vue/language-server";
-      version = "2.0.19";
-      src = pkgs.fetchurl {
-        url = "https://registry.npmjs.org/@vue/language-server/-/language-server-${version}.tgz";
-        hash = "sha256-4BZupUu0fpKH8lN0rwOXrY3QqBcGsugzeW7ptPa4Lj4=";
-      };
-      postPatch = ''
+    name = "@vtsls/language-server";
+    version = "2.1.6";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "vuejs";
+      repo = "language-tools";
+      rev = "814b30f9fa5157b9549792af30a9e224d31c7a8f";
+      hash = "sha256-cic4s34GcxpADM3HcCUv6m8H+i0h2q3cNhtwxfcJ04w=";
+    };
+
+    sourceRoot = "source/packages/language-server";
+
+    npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
+
+    postPatch = ''
         cp ${../../others/vue/language-server/package-lock.json} package-lock.json
-      '';
-      npmDepsHash = "sha256-Y5QNmjE58FeelGhSK3qHAMZs3xL+/1fHyNGL9bJElgE=";
-      dontNpmBuild = true;
-      meta = {
-        mainProgram = "vue-language-server";
-      };
+    '';
+
+    dontNpmBuild = true;
+
+    npmFlags = [ "--legacy-peer-deps" "--loglevel=verbose" ];
+
+    meta = {
+      mainProgram = "vtsls";
+    };
   };
 in 
 {
