@@ -9,7 +9,7 @@ let
       url = "https://registry.npmjs.org/@vue/typescript-plugin/-/typescript-plugin-${version}.tgz";
       hash = "sha256-vYkWDitSCAV3mjdAGg/JCn0QESU712wb87k9MU8EwRA=";
     };
-        #npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
+
     npmDepsHash = "sha256-uHX2UoNrXCvhMVFblS7Gk3+jhzp019sCw7NyO+ssOZU=";
 
     postPatch = ''
