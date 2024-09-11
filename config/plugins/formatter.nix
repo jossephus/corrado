@@ -8,9 +8,11 @@
         typescript = [["prettierd"]];
       };
 
-      formatOnSave = {
-        lspFallback = true;
-        timeoutMs = 500;
+      settings = {
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 500;
+        };
       };
     };
   };

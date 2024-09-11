@@ -2,18 +2,13 @@
 
 let 
   vuets = pkgs.buildNpmPackage rec {
-    name = "@vtsls/language-server";
+    name = "@vtsls/typescript-plugin";
     version = "2.1.6";
 
-    src = pkgs.fetchFromGitHub {
-      owner = "vuejs";
-      repo = "language-tools";
-      rev = "814b30f9fa5157b9549792af30a9e224d31c7a8f";
-      hash = "sha256-cic4s34GcxpADM3HcCUv6m8H+i0h2q3cNhtwxfcJ04w=";
+    src = pkgs.fetchurl {
+      url = "https://registry.npmjs.org/@vue/typescript-plugin/-/typescript-plugin-${version}.tgz";
+      hash = "sha256-vYkWDitSCAV3mjdAGg/JCn0QESU712wb87k9MU8EwRA=";
     };
-
-    sourceRoot = "source/packages/typescript-plugin";
-
         #npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
     npmDepsHash = "sha256-uHX2UoNrXCvhMVFblS7Gk3+jhzp019sCw7NyO+ssOZU=";
 
@@ -34,14 +29,10 @@ let
     name = "@vtsls/language-server";
     version = "2.1.6";
 
-    src = pkgs.fetchFromGitHub {
-      owner = "vuejs";
-      repo = "language-tools";
-      rev = "814b30f9fa5157b9549792af30a9e224d31c7a8f";
-      hash = "sha256-cic4s34GcxpADM3HcCUv6m8H+i0h2q3cNhtwxfcJ04w=";
+    src = pkgs.fetchurl {
+      url = "https://registry.npmjs.org/@vue/language-server/-/language-server-${version}.tgz";
+      hash = "sha256-/bwfssKZRwVLojAC5cQsXsb9qXxzBshFwdezRPr65AY=";
     };
-
-    sourceRoot = "source/packages/language-server";
 
     npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
 
