@@ -34,7 +34,7 @@ let
       hash = "sha256-/bwfssKZRwVLojAC5cQsXsb9qXxzBshFwdezRPr65AY=";
     };
 
-    npmDepsHash = "sha256-v/DcKaSevPJcW7fTdLcIYYrvwVZgdmW9zvxRnzGngtA=";
+    npmDepsHash = "sha256-4k8T/N8M2bovB8iriUyZwBO2iL828gPlg9f34bdlOdA=";
 
     postPatch = ''
         cp ${../../others/vue/language-server/package-lock.json} package-lock.json
